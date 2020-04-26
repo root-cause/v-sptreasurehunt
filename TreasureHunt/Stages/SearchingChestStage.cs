@@ -13,17 +13,7 @@ namespace TreasureHunt.Classes
         #region Constants
         private const int HelpTextTime = 7000;
         private const int BlipFlashTime = 7000;
-
         private const string AnimDict = "anim@TreasureHunt@DoubleAction@Action";
-
-        private readonly Control[] ControlsToDisable =
-        {
-            Control.CharacterWheel,
-            Control.SelectCharacterMichael,
-            Control.SelectCharacterFranklin,
-            Control.SelectCharacterTrevor,
-            Control.SelectCharacterMultiplayer
-        };
         #endregion
 
         // Entities
@@ -217,11 +207,7 @@ namespace TreasureHunt.Classes
                 }
                 else
                 {
-                    for (int i = 0; i < ControlsToDisable.Length; i++)
-                    {
-                        Game.DisableControlThisFrame(0, ControlsToDisable[i]);
-                    }
-
+                    Game.DisableAllControlsThisFrame(0);
                     Function.Call(Hash.HIDE_HUD_AND_RADAR_THIS_FRAME);
 
                     // Scene phase stuff
